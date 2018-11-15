@@ -1,5 +1,6 @@
 package com.owayed.kareen.kareenhackerfinal;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -10,4 +11,28 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
     }
+
+    @Override
+    protected void onResume() {
+        MyThread myThread=new MyThread();
+        myThread.start();
+        super.onResume();
+    }
+    public class MyThread extends Thread
+    {
+        @Override
+        public void run() {
+            try {
+                sleep(3000);
+                Intent i=new Intent(StartActivity.this,LogInActivity.class);
+                startActivity(i);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
+
+
+
+
