@@ -27,7 +27,7 @@ public class LogInActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPasswprd);
         btnlogin = findViewById(R.id.btnlogin);
         btnsignup = findViewById(R.id.btnsignup);
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(LogInActivity.this, StartActivity.class);
@@ -35,7 +35,7 @@ public class LogInActivity extends AppCompatActivity {
                 Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
                 startActivity(intent);
                 dataHandler();
-                btnsignup.setOnClickListener(new View.OnClickListener() {
+                btnlogin.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent i2 = new Intent(LogInActivity.this, SignUpActivity.class);
